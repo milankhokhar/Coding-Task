@@ -22,6 +22,12 @@ public class ProviderRequestController {
         return datamodel;
     }
 
+    @PostMapping("customer/date")
+    public String date(@RequestBody DataModel model){
+        datamodel.setDate(model.getDate());
+
+        return "Date Selected";
+    }
 
     @GetMapping("/display")
     @Scheduled(cron = "* * * * 7 *")
@@ -30,8 +36,8 @@ public class ProviderRequestController {
         datamodel.getHint();
         datamodel.getHeadLine();
         datamodel.getLink();
+
         return datamodel;
+
     }
-
-
 }

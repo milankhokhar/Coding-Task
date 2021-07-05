@@ -1,30 +1,12 @@
 package de.dynamaze.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
 public class DataModel {
 
-    public DataModel(String headLine, String description, String hint, String link) {
-        this.headLine = headLine;
-        this.description = description;
-        this.hint = hint;
-        this.link = link;
-    }
-
-    private String headLine;
-    private String description;
-    private String hint;
-
-    public DataModel(){}
-
-
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
 
     public String getHeadLine() {
         return headLine;
@@ -50,17 +32,42 @@ public class DataModel {
         this.hint = hint;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public DataModel(String headLine, String description, String hint, String link, Date date) {
+        this.headLine = headLine;
+        this.description = description;
+        this.hint = hint;
+        this.link = link;
+        this.date = date;
+    }
+
+    private String headLine;
+    private String description;
+    private String hint;
     private String link;
 
-    @Override
-    public String toString() {
-        return "DataModel{" +
-                "link='" + link + '\'' +
-                ", headLine='" + headLine + '\'' +
-                ", description='" + description + '\'' +
-                ", hint='" + hint + '\'' +
-                '}';
-    }
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    private Date date;
+
+    public DataModel(){}
+
+
+
 
 
 }
