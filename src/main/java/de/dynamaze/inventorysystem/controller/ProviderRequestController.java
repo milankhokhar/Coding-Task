@@ -1,29 +1,50 @@
 package de.dynamaze.inventorysystem.controller;
 
-import de.dynamaze.inventorysystem.model.ProviderActivityData;
+
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+import java.util.List;
+
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @RestController
 @EnableScheduling
 public class ProviderRequestController {
 
-    ProviderActivityData datamodel=new ProviderActivityData();
+
+    private List<String> headLine;
+    private List<String> description;
+    private List<String> hint;
+    private String link;
+
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    private Date date;
+
+
+    ProviderRequestController datamodel=new ProviderRequestController();
 
     @PostMapping("/provider")
-    public void getData(@RequestBody ProviderActivityData model){
+    public void getData(@RequestBody ProviderRequestController model){
 
         datamodel.setLink(model.getLink());
         datamodel.setHeadLine(model.getHeadLine());
         datamodel.setDescription(model.getDescription());
         datamodel.setHint(model.getHint());
 
-        
+
     }
 
     @PostMapping("customer/date")
-    public String date(@RequestBody ProviderActivityData model){
+    public String date(@RequestBody ProviderRequestController model){
         datamodel.setDate(model.getDate());
 
         return "Date Selected";
@@ -31,7 +52,7 @@ public class ProviderRequestController {
 
     @GetMapping("/display")
     @Scheduled(cron = "* * * * 7 *")
-    public ProviderActivityData displayData(){
+    public ProviderRequestController displayData(){
         datamodel.getDescription();
         datamodel.getHint();
         datamodel.getHeadLine();
