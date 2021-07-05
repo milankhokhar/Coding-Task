@@ -1,6 +1,6 @@
 package de.dynamaze.inventorysystem.controller;
 
-import de.dynamaze.model.DataModel;
+import de.dynamaze.inventorysystem.model.ProviderActivityData;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.*;
 @EnableScheduling
 public class ProviderRequestController {
 
-    DataModel datamodel=new DataModel();
+    ProviderActivityData datamodel=new ProviderActivityData();
 
     @PostMapping("/provider")
-    public DataModel getData(@RequestBody DataModel model){
+    public void getData(@RequestBody ProviderActivityData model){
 
         datamodel.setLink(model.getLink());
         datamodel.setHeadLine(model.getHeadLine());
         datamodel.setDescription(model.getDescription());
         datamodel.setHint(model.getHint());
 
-        return datamodel;
+        
     }
 
     @PostMapping("customer/date")
-    public String date(@RequestBody DataModel model){
+    public String date(@RequestBody ProviderActivityData model){
         datamodel.setDate(model.getDate());
 
         return "Date Selected";
@@ -31,7 +31,7 @@ public class ProviderRequestController {
 
     @GetMapping("/display")
     @Scheduled(cron = "* * * * 7 *")
-    public DataModel displayData(){
+    public ProviderActivityData displayData(){
         datamodel.getDescription();
         datamodel.getHint();
         datamodel.getHeadLine();

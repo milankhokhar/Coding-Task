@@ -1,4 +1,4 @@
-package de.dynamaze.model;
+package de.dynamaze.inventorysystem.model;
 
 
 import lombok.*;
@@ -11,7 +11,7 @@ import java.util.Date;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class DataModel {
+public class ProviderActivityData {
 
 
     private String headLine;
@@ -22,6 +22,6 @@ public class DataModel {
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date date;
 
-    
+
 
 }
