@@ -2,9 +2,12 @@ package de.dynamaze.inventorysystem.controller;
 
 
 import de.dynamaze.inventorysystem.descriptionModel.Description;
+import de.dynamaze.inventorysystem.headLineModel.HeadLine;
 import lombok.*;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Getter
@@ -18,6 +21,7 @@ public class ProviderRequestController {
 //    private List<String> headLine;
 
     Description description=new Description();
+    HeadLine headLine=new HeadLine();
 //    private List<String> hint;
 //    private String link;
 //
@@ -27,15 +31,16 @@ public class ProviderRequestController {
 
 
     @PostMapping("/provider")
-    private Description getData(@RequestBody Description descriptionInfo){
+    private void getData(@RequestBody Description descriptionInfo, @RequestBody HeadLine headLineInfo){
 
 
 
 //        providerActivityData.setHeadLine(providerActivity.getHeadLine());
-        this.description.setDescription(descriptionInfo.getDescription());
+        description.setDescription(descriptionInfo.getDescription());
+        headLine.setHeadLine(headLineInfo.getHeadLine());
 //        providerActivityData.setHint(providerActivity.getHint());
 //        providerActivityData.setLink(providerActivity.getLink());
-        return description;
+        System.out.println(description+"headline"+headLine);
     }
 
 //    @PostMapping("/customer/date")
