@@ -1,4 +1,4 @@
-package de.dynamaze.inventorysystem.headLineDomain;
+package de.dynamaze.inventorysystem.headLineModel;
 
 public class HeadLine {
 }

@@ -1,4 +1,4 @@
-package de.dynamaze.inventorysystem.descriptionDomain;
+package de.dynamaze.inventorysystem.descriptionModel;
 
 
 import lombok.Getter;

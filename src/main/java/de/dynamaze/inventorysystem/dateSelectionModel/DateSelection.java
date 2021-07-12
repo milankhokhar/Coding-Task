@@ -1,4 +1,4 @@
-package de.dynamaze.inventorysystem.dateSelectionDomain;
+package de.dynamaze.inventorysystem.dateSelectionModel;
 
 
 public class DateSelection {

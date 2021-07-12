@@ -1,4 +1,4 @@
-package de.dynamaze.inventorysystem.hintDomain;
+package de.dynamaze.inventorysystem.hintModel;
 
 public class Hint {
 }

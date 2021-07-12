@@ -1,64 +1,55 @@
 package de.dynamaze.inventorysystem.controller;
 
 
+import de.dynamaze.inventorysystem.descriptionModel.Description;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
-import java.util.List;
 
 
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
 @RestController
 @EnableScheduling
 public class ProviderRequestController {
 
+//    ProviderRequestController providerActivityData=new ProviderRequestController();
 
-    private List<String> headLine;
-    private List<String> description;
-    private List<String> hint;
-    private String link;
+//    private List<String> headLine;
 
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date date;
+    Description description=new Description();
+//    private List<String> hint;
+//    private String link;
+//
+//    @DateTimeFormat(pattern = "yyyy-mm-dd")
+//    private Date date;
 
 
-    ProviderRequestController datamodel=new ProviderRequestController();
 
     @PostMapping("/provider")
-    public void getData(@RequestBody ProviderRequestController model){
-
-        datamodel.setLink(model.getLink());
-        datamodel.setHeadLine(model.getHeadLine());
-        datamodel.setDescription(model.getDescription());
-        datamodel.setHint(model.getHint());
+    private Description getData(@RequestBody Description descriptionInfo){
 
 
+
+//        providerActivityData.setHeadLine(providerActivity.getHeadLine());
+        this.description.setDescription(descriptionInfo.getDescription());
+//        providerActivityData.setHint(providerActivity.getHint());
+//        providerActivityData.setLink(providerActivity.getLink());
+        return description;
     }
 
-    @PostMapping("customer/date")
-    public String date(@RequestBody ProviderRequestController model){
-        datamodel.setDate(model.getDate());
-
-        return "Date Selected";
-    }
-
-    @GetMapping("/display")
-    @Scheduled(cron = "* * * * 7 *")
-    public ProviderRequestController displayData(){
-        datamodel.getDescription();
-        datamodel.getHint();
-        datamodel.getHeadLine();
-        datamodel.getLink();
-
-        return datamodel;
-
-    }
+//    @PostMapping("/customer/date")
+//    private String date(@RequestBody ProviderRequestController providerActivity){
+//
+//        providerActivityData.setDate(providerActivity.getDate());
+//
+//        return "Date Selected";
+//    }
+//
+//    @GetMapping("/display")
+//    @Scheduled(cron = "* * * * 7 *")
+//    public ProviderRequestController displayData(ProviderRequestController providerActivityData){
+//        return providerActivityData;
+//
+//    }
 }
