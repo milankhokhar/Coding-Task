@@ -1,14 +1,10 @@
 package de.dynamaze.inventorysystem.controller;
 
 
-import de.dynamaze.inventorysystem.descriptionModel.Description;
-import de.dynamaze.inventorysystem.headLineModel.HeadLine;
+
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 
 @Getter
@@ -18,8 +14,11 @@ import java.util.List;
 public class ProviderRequestController {
 
 
+
+
     @PostMapping("/provider")
-    private void getData(){
+    private void getData(@RequestBody ProviderRequestController providerRequestControllerInfo){
+
 
 
     }
