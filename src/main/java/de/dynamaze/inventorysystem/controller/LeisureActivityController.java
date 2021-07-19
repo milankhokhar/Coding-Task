@@ -1,5 +1,6 @@
-package de.dynamaze.inventorysystem.model;
+package de.dynamaze.inventorysystem.controller;
 
+import de.dynamaze.inventorysystem.model.Providers;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -18,10 +19,9 @@ import java.util.Date;
 @NoArgsConstructor
 @EnableScheduling
 @RestController
-public class LeisureActivityController extends LeisureActivityResponse {
+public class LeisureActivityController extends Providers {
 
-    private String url;
-    private String providerName;
+
 
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date selectedDate;
