@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -19,31 +18,31 @@ import java.util.List;
 @NoArgsConstructor
 @EnableScheduling
 @RestController
-public class LeisureProvider extends LeisureActivity {
+public class LeisureActivityController extends LeisureActivityResponse {
 
     private String url;
-    private String provider_name;
+    private String providerName;
 
     @DateTimeFormat(pattern = "dd.MM.yyyy")
-    private Date selected_date;
+    private Date selectedDate;
 
 
-    LeisureProvider provider;
+    LeisureActivityController provider;
 
     @PostMapping("/provider")
-    private void getProviderData(@RequestBody LeisureProvider provider_req){
-        provider=provider_req;
+    private void getProviderData(@RequestBody LeisureActivityController providerReq){
+        provider=providerReq;
     }
 
-    @PostMapping("/customer/selected_Date")
-    private String dateSelection(@RequestBody LeisureProvider customer_date){
-        provider.setSelected_date(customer_date.getSelected_date());
+    @PostMapping("/customer/selectedDate")
+    private String dateSelection(@RequestBody LeisureActivityController customerDate){
+        provider.setSelectedDate(customerDate.getSelectedDate());
         return "Date Selected";
     }
 
     @GetMapping("/leisureActivity")
     @Scheduled(cron = "* * * * 7 *")
-    private LeisureProvider displayLeisureActivity(){
+    private LeisureActivityController displayLeisureActivity(){
         return provider;
     }
 }

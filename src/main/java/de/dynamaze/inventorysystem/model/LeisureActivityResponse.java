@@ -12,10 +12,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LeisureActivity {
+public class LeisureActivityResponse {
 
 
     private String headLine;
-    private List<String> description;
+    private String description;
     private List<String> hint;
 }
