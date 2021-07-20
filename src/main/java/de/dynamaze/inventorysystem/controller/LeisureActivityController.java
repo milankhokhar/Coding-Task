@@ -1,5 +1,6 @@
 package de.dynamaze.inventorysystem.controller;
 
+import de.dynamaze.inventorysystem.model.LeisureActivityResponse;
 import de.dynamaze.inventorysystem.model.Providers;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,30 +20,25 @@ import java.util.Date;
 @NoArgsConstructor
 @EnableScheduling
 @RestController
-public class LeisureActivityController extends Providers {
+public class LeisureActivityController {
+    
 
-
-
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
-    private Date selectedDate;
-
-
-    LeisureActivityController provider;
+    Providers provider;
 
     @PostMapping("/provider")
-    private void getProviderData(@RequestBody LeisureActivityController providerReq){
+    private void getProviderData(@RequestBody Providers providerReq){
         provider=providerReq;
     }
 
     @PostMapping("/customer/selectedDate")
-    private String dateSelection(@RequestBody LeisureActivityController customerDate){
+    private String dateSelection(@RequestBody Providers customerDate){
         provider.setSelectedDate(customerDate.getSelectedDate());
         return "Date Selected";
     }
 
     @GetMapping("/leisureActivity")
     @Scheduled(cron = "* * * * 7 *")
-    private LeisureActivityController displayLeisureActivity(){
+    private Providers displayLeisureActivity(){
         return provider;
     }
 }
