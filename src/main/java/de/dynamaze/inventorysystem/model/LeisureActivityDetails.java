@@ -14,9 +14,9 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LeisureActivityResponse {
+public class LeisureActivityDetails {
 
-
+    private Long activityId;
     private String headLine;
     private String description;
     private List<String> hint;

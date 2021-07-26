@@ -1,9 +1,8 @@
 package de.dynamaze.inventorysystem.controller;
 
-import de.dynamaze.inventorysystem.model.LeisureActivityResponse;
-import de.dynamaze.inventorysystem.model.Providers;
+import de.dynamaze.inventorysystem.model.LeisureActivityDetails;
+import de.dynamaze.inventorysystem.model.LeisureProviders;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,24 +19,25 @@ import java.util.Date;
 @EnableScheduling
 @RestController
 public class LeisureActivityController {
-    
 
-    Providers provider;
+
+    LeisureProviders provider;
+    List<LeisureActivityDetails> date;
 
     @PostMapping("/provider")
-    private void getProviderData(@RequestBody Providers providerReq){
+    private void getProviderData(@RequestBody LeisureProviders providerReq){
         provider=providerReq;
     }
 
-    @PostMapping("/customer/selectedDate")
-    private String dateSelection(@RequestBody Providers customerDate){
-        provider.setSelectedDate(customerDate.getSelectedDate());
-        return "Date Selected";
-    }
+//    @PostMapping("/customer/selectedDate")
+//    private String dateSelection(@RequestBody List<LeisureActivityDetails> customerDate){
+//        date.set();
+//        return "Date Selected";
+//    }
 
     @GetMapping("/leisureActivity")
     @Scheduled(cron = "* * * * 7 *")
-    private Providers displayLeisureActivity(){
+    private LeisureProviders displayLeisureActivity(){
         return provider;
     }
 }
