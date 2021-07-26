@@ -18,8 +18,7 @@ public class LeisureProviders  {
     private Long providerId;
     private String url;
     private String providerName;
-
-
-    private Map<Long, LeisureActivityDetails> activityDetails;
+    
+    private Map<Long , LeisureActivityDetails> activityDetails;
 
 }

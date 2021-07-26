@@ -16,7 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 public class LeisureActivityDetails {
 
-    private Long activityId;
     private String headLine;
     private String description;
     private List<String> hint;

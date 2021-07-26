@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -21,19 +23,20 @@ import java.util.List;
 public class LeisureActivityController {
 
 
-    LeisureProviders provider;
-    List<LeisureActivityDetails> date;
+    private LeisureProviders provider;
+
 
     @PostMapping("/provider")
     private void getProviderData(@RequestBody LeisureProviders providerReq){
         provider=providerReq;
+
     }
 
-//    @PostMapping("/customer/selectedDate")
-//    private String dateSelection(@RequestBody List<LeisureActivityDetails> customerDate){
-//        date.set();
-//        return "Date Selected";
-//    }
+    @PostMapping("/customer/selectedDate")
+    private String dateSelection(@RequestBody LeisureActivityDetails customerDate){
+
+        return "Date Selected";
+    }
 
     @GetMapping("/leisureActivity")
     @Scheduled(cron = "* * * * 7 *")
