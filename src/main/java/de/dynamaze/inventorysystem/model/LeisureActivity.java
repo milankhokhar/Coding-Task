@@ -9,13 +9,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LeisureActivityDetails {
+public class LeisureActivity {
 
+    private UUID activityId=UUID.randomUUID();
     private String headLine;
     private String description;
     private List<String> hint;
