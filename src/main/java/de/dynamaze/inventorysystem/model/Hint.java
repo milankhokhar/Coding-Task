@@ -9,5 +9,5 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Hint {
-    private List<String> hints;
+    private String hints;
 }
