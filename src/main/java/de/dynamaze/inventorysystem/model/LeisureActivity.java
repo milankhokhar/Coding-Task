@@ -20,6 +20,7 @@ public class LeisureActivity {
     private UUID activityId=UUID.randomUUID();
     private String headLine;
     private String description;
+    private List<Hint> hints;
 
 
     @DateTimeFormat(pattern = "dd.MM.yyyy")
