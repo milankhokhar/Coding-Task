@@ -15,7 +15,7 @@ public class LeisureProvider {
     private UUID providerId=UUID.randomUUID();
     private String url;
     private String providerName;
-    private List<Hint> hintsDetail;
+    private List<Hint> hints;
     private Map<UUID , LeisureActivity> activityDetails;
 
 }
