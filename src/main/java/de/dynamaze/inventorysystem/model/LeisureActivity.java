@@ -12,9 +12,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class LeisureActivity {
 
     private UUID activityId=UUID.randomUUID();
@@ -25,4 +22,37 @@ public class LeisureActivity {
 
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date selectedDate;
+
+
+    public void setHeadLine(String headLine) {
+        this.headLine = headLine;
+    }
+
+
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+
+    public void setHints(List<Hint> hints) {
+        this.hints = hints;
+    }
+
+
+
+    public void setSelectedDate(Date selectedDate) {
+        this.selectedDate = selectedDate;
+    }
+
+
+
+    public LeisureActivity(String headLine, String description, List<Hint> hints, Date selectedDate) {
+        this.headLine = headLine;
+        this.description = description;
+        this.hints = hints;
+        this.selectedDate = selectedDate;
+    }
+
 }
