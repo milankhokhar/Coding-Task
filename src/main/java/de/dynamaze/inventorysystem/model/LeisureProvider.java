@@ -21,15 +21,5 @@ public class LeisureProvider {
         this.activityDetails = activityDetails;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
 
-    public void setProviderName(String providerName) {
-        this.providerName = providerName;
-    }
-
-    public void setActivityDetails(Map<UUID, LeisureActivity> activityDetails) {
-        this.activityDetails = activityDetails;
-    }
 }

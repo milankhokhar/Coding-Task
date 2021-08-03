@@ -24,30 +24,6 @@ public class LeisureActivity {
     private Date selectedDate;
 
 
-    public void setHeadLine(String headLine) {
-        this.headLine = headLine;
-    }
-
-
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-
-    public void setHints(List<Hint> hints) {
-        this.hints = hints;
-    }
-
-
-
-    public void setSelectedDate(Date selectedDate) {
-        this.selectedDate = selectedDate;
-    }
-
-
-
     public LeisureActivity(String headLine, String description, List<Hint> hints, Date selectedDate) {
         this.headLine = headLine;
         this.description = description;
