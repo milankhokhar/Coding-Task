@@ -1,7 +1,7 @@
 package de.dynamaze.inventorysystem.model;
 
 import lombok.*;
-import org.bson.types.ObjectId;
+
 
 import java.util.List;
 import java.util.Map;
