@@ -1,5 +1,6 @@
 package de.dynamaze.inventorysystem.controller;
 
+import de.dynamaze.inventorysystem.commands.CreateProvider;
 import de.dynamaze.inventorysystem.model.LeisureActivity;
 import de.dynamaze.inventorysystem.model.LeisureProvider;
 import lombok.*;
@@ -18,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class LeisureActivityController {
 
 
-    private LeisureProvider provider;
+    private CreateProvider provider;
 
 
     @PostMapping("/provider")
-    private void getProviderData(@RequestBody LeisureProvider providerReq){
+    private void getProviderData(@RequestBody CreateProvider providerReq){
         provider=providerReq;
 
     }
@@ -35,7 +36,7 @@ public class LeisureActivityController {
 
     @GetMapping("/leisureActivity")
     @Scheduled(cron = "* * * * 7 *")
-    private LeisureProvider displayLeisureActivity(){
+    private CreateProvider displayLeisureActivity(){
         return provider;
     }
 }

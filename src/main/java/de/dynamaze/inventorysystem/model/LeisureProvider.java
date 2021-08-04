@@ -16,7 +16,8 @@ public class LeisureProvider {
     private String providerName;
     private Map<UUID , LeisureActivity> activityDetails;
 
-    public LeisureProvider(CreateProvider command) {
+    public LeisureProvider(UUID providerId,CreateProvider command) {
+        this.providerId=providerId;
         this.url = command.getUrl();
         this.providerName = command.getProviderName();
         this.activityDetails = command.getActivityDetails();

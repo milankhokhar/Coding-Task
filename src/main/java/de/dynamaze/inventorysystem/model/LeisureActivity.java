@@ -1,5 +1,6 @@
 package de.dynamaze.inventorysystem.model;
 
+import de.dynamaze.inventorysystem.commands.CreateActivity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,11 +25,12 @@ public class LeisureActivity {
     private Date selectedDate;
 
 
-    public LeisureActivity(String headLine, String description, List<Hint> hints, Date selectedDate) {
-        this.headLine = headLine;
-        this.description = description;
-        this.hints = hints;
-        this.selectedDate = selectedDate;
+    public LeisureActivity(UUID activityId,CreateActivity command) {
+        this.activityId=activityId;
+        this.headLine = command.getHeadLine();
+        this.description = command.getDescription();
+        this.hints = command.getHints();
+        this.selectedDate = command.getSelectedDate();
     }
 
 }
