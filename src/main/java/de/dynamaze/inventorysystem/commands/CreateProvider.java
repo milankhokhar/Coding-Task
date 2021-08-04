@@ -1,10 +1,12 @@
 package de.dynamaze.inventorysystem.commands;
 
 import de.dynamaze.inventorysystem.model.LeisureActivity;
+import lombok.Getter;
 
 import java.util.Map;
 import java.util.UUID;
 
+@Getter
 public class CreateProvider {
     private UUID providerId=UUID.randomUUID();
     private String url;

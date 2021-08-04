@@ -1,5 +1,6 @@
 package de.dynamaze.inventorysystem.model;
 
+import de.dynamaze.inventorysystem.commands.CreateProvider;
 import lombok.*;
 
 
@@ -15,10 +16,10 @@ public class LeisureProvider {
     private String providerName;
     private Map<UUID , LeisureActivity> activityDetails;
 
-    public LeisureProvider(String url, String providerName, Map<UUID, LeisureActivity> activityDetails) {
-        this.url = url;
-        this.providerName = providerName;
-        this.activityDetails = activityDetails;
+    public LeisureProvider(CreateProvider command) {
+        this.url = command.getUrl();
+        this.providerName = command.getProviderName();
+        this.activityDetails = command.getActivityDetails();
     }
 
 
