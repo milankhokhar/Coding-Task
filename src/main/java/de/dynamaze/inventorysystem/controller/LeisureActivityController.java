@@ -1,5 +1,6 @@
 package de.dynamaze.inventorysystem.controller;
 
+import de.dynamaze.inventorysystem.commands.CreateActivity;
 import de.dynamaze.inventorysystem.commands.CreateProvider;
 import de.dynamaze.inventorysystem.model.LeisureActivity;
 import de.dynamaze.inventorysystem.model.LeisureProvider;
@@ -29,7 +30,7 @@ public class LeisureActivityController {
     }
 
     @PostMapping("/customer/selectedDate")
-    private String dateSelection(@RequestBody LeisureActivity customerDate){
+    private String dateSelection(@RequestBody CreateActivity customerDate){
 
         return "Date Selected";
     }

@@ -25,8 +25,7 @@ public class LeisureActivity {
     private Date selectedDate;
 
 
-    public LeisureActivity(UUID activityId,CreateActivity command) {
-        this.activityId=activityId;
+    public LeisureActivity(CreateActivity command) {
         this.headLine = command.getHeadLine();
         this.description = command.getDescription();
         this.hints = command.getHints();
