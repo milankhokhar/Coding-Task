@@ -14,7 +14,7 @@ public class CreateProvider {
     private String providerName;
 
 
-    public CreateProvider(String url, String providerName, Map<UUID, LeisureActivity> activityDetails) {
+    public CreateProvider(String url, String providerName) {
 
         this.url = url;
         this.providerName = providerName;
