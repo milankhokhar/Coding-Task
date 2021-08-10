@@ -11,16 +11,16 @@ import java.util.UUID;
 @Getter
 public class LeisureProvider {
 
-    private UUID providerId;
+    private String providerId;
     private String url;
     private String providerName;
-
+    private Map<UUID , LeisureActivity> activityDetails;
 
     public LeisureProvider(CreateProvider command) {
-        this.providerId=UUID.randomUUID();
+        this.providerId=UUID.randomUUID().toString();
         this.url = command.getUrl();
         this.providerName = command.getProviderName();
-
+        this.activityDetails = command.getActivityDetails();
     }
 
 
