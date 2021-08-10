@@ -15,7 +15,7 @@ import java.util.UUID;
 @Getter
 public class LeisureActivity {
 
-    private String activityId;
+    private UUID activityId;
     private String headLine;
     private String description;
     private List<Hint> hints;
@@ -26,7 +26,7 @@ public class LeisureActivity {
 
 
     public LeisureActivity(CreateActivity command) {
-        this.activityId=UUID.randomUUID().toString();
+        this.activityId=UUID.randomUUID();
         this.headLine = command.getHeadLine();
         this.description = command.getDescription();
         this.hints = command.getHints();
