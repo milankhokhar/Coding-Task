@@ -30,7 +30,10 @@ public class LeisureActivityController {
 
     }
 
-
+    @PostMapping("provider")
+    private void getProviderData(@RequestBody LeisureProvider provider){
+        this.provider=provider;
+    }
 
     @PostMapping("/customer/selectedDate")
     private String dateSelection(@RequestBody CreateActivity customerDate){
