@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Getter
+@NoArgsConstructor
 public class LeisureProvider {
 
     private UUID providerId;

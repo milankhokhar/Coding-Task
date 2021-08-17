@@ -22,13 +22,15 @@ public class LeisureActivityController {
 
 
     private ProviderAndActivity providerAndActivity;
+    private LeisureProvider provider;
 
-
-    @PostMapping("/provider")
-    private void getProviderData(@RequestBody ProviderAndActivity providerAndActivity){
+    @PostMapping("/provider/activity")
+    private void getProviderAndActivityData(@RequestBody ProviderAndActivity providerAndActivity){
         this.providerAndActivity=providerAndActivity;
 
     }
+
+
 
     @PostMapping("/customer/selectedDate")
     private String dateSelection(@RequestBody CreateActivity customerDate){

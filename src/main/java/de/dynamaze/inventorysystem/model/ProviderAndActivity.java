@@ -7,12 +7,16 @@ import org.springframework.boot.autoconfigure.mail.MailProperties;
 import java.util.Map;
 
 import java.util.Map;
+import java.util.UUID;
 
 @NoArgsConstructor
+@Getter
 public class ProviderAndActivity {
-    private Map<LeisureProvider,LeisureActivity> providerWithActivity;
+    private LeisureProvider provider;
+    private Map<UUID,LeisureActivity> leisureActivity;
 
-    public ProviderAndActivity(Map<LeisureProvider, LeisureActivity> providerWithActivity) {
-        this.providerWithActivity = providerWithActivity;
+    public ProviderAndActivity(LeisureProvider provider, Map<UUID, LeisureActivity> leisureActivity) {
+        this.provider = provider;
+        this.leisureActivity = leisureActivity;
     }
 }
